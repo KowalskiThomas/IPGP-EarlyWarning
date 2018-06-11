@@ -4,7 +4,6 @@ import org.asteriskjava.pbx.PBXFactory;
 import org.asteriskjava.pbx.internal.core.AsteriskPBX;
 
 import java.io.IOException;
-import java.net.SocketException;
 import java.util.logging.Logger;
 
 public class App {
@@ -15,11 +14,12 @@ public class App {
     {
         logger = Logger.getLogger("Main");
 
-        EarlyWarningAsteriskSettings settings = SettingsBuilder.fromConfigurationFile();
+        Settings settings = Settings.getInstance();
+        EarlyWarningAsteriskSettings asteriskSettings = settings.getAsteriskSettings();
 
         /* Initialize a PBX with our current settings, read from the configuration file. */
         try {
-            PBXFactory.init(settings);
+            PBXFactory.init(asteriskSettings);
         }
         catch (NullPointerException ex)
         {
