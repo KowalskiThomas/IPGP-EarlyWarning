@@ -1,3 +1,5 @@
+package fr.ipgp.earlywarning.models;
+
 import org.asteriskjava.pbx.DefaultAsteriskSettings;
 
 public class EarlyWarningAsteriskSettings extends DefaultAsteriskSettings {
@@ -30,6 +32,6 @@ public class EarlyWarningAsteriskSettings extends DefaultAsteriskSettings {
     @Override
     public String toString()
     {
-        return "EarlyWarningAsteriskSettings: " + username + ":" + password + ", local = " + host + ", server = " + ip;
+        return "fr.ipgp.earlywarning.models.EarlyWarningAsteriskSettings: " + username + ":" + password + ", local = " + host + ", server = " + ip;
     }
 }

@@ -1,3 +1,7 @@
+package fr.ipgp.earlywarning.view;
+
+import fr.ipgp.earlywarning.models.EarlyWarningAsteriskSettings;
+import fr.ipgp.earlywarning.utilities.Settings;
 import org.asteriskjava.manager.AuthenticationFailedException;
 import org.asteriskjava.manager.TimeoutException;
 import org.asteriskjava.pbx.PBXFactory;
@@ -14,6 +18,7 @@ public class App {
     {
         logger = Logger.getLogger("Main");
 
+
         Settings settings = Settings.getInstance();
         EarlyWarningAsteriskSettings asteriskSettings = settings.getAsteriskSettings();
 
@@ -26,7 +31,7 @@ public class App {
             logger.severe("Couldn't connect to the Asterisk server.");
             return;
         }
-
+        
         /**
          * Activities utilise an agi entry point in your dial plan.
          * You can create your own entry point in dialplan or have

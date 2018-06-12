@@ -1,3 +1,6 @@
+package fr.ipgp.earlywarning;
+
+import fr.ipgp.earlywarning.utilities.Settings;
 import org.asteriskjava.fastagi.AgiChannel;
 import org.asteriskjava.fastagi.AgiException;
 import org.asteriskjava.fastagi.AgiRequest;

@@ -1,3 +1,5 @@
+package fr.ipgp.earlywarning;
+
 import org.asteriskjava.manager.AuthenticationFailedException;
 import org.asteriskjava.manager.ManagerConnection;
 import org.asteriskjava.manager.ManagerConnectionFactory;
@@ -11,8 +13,6 @@ public class Caller {
 
     public static void call()
     {
-
-
         // Initialize the ManagerConnection
         ManagerConnection managerConnection;
         ManagerConnectionFactory factory = new ManagerConnectionFactory("localhost", "manager", "pa55w0rd");

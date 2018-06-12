@@ -1,3 +1,6 @@
+package fr.ipgp.earlywarning.utilities;
+
+import fr.ipgp.earlywarning.models.EarlyWarningAsteriskSettings;
 import org.json.*;
 
 import java.io.File;
