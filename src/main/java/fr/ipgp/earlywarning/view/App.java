@@ -8,16 +8,25 @@ import org.asteriskjava.pbx.PBXFactory;
 import org.asteriskjava.pbx.internal.core.AsteriskPBX;
 
 import java.io.IOException;
+import java.util.logging.FileHandler;
 import java.util.logging.Logger;
+import java.util.logging.SimpleFormatter;
+
+import static fr.ipgp.earlywarning.utilities.Logging.initLogger;
 
 public class App {
 
-    public static Logger logger;
+    private static Logger logger;
 
+    /**
+     * The app's entry point
+     * @param args command line arguments
+     */
     public static void main(final String args[])
     {
-        logger = Logger.getLogger("Main");
+        logger = initLogger(fr.ipgp.earlywarning.view.App.class, true);
 
+        logger.info("coucuo");
 
         Settings settings = Settings.getInstance();
         EarlyWarningAsteriskSettings asteriskSettings = settings.getAsteriskSettings();
@@ -29,9 +38,9 @@ public class App {
         catch (NullPointerException ex)
         {
             logger.severe("Couldn't connect to the Asterisk server.");
-            return;
+            System.exit(1);
         }
-        
+
         /**
          * Activities utilise an agi entry point in your dial plan.
          * You can create your own entry point in dialplan or have
